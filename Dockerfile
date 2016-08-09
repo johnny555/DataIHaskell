@@ -35,7 +35,10 @@ COPY main /ihaskell/main
 COPY LICENSE /ihaskell/LICENSE
 RUN stack build \
 && stack install \
-&& stack install csv
+&& stack install csv \
+&& stack install vector \
+&& stack install flow \
+&& stack install ihaskell-charts
 
 # Run the notebook
 RUN mkdir /notebooks
