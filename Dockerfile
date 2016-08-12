@@ -1,7 +1,8 @@
 FROM ubuntu:14.04
 
 # Install all necessary Ubuntu packages
-RUN apt-get update && apt-get install -y python-dev python-setuptools libmagic-dev libtinfo-dev libzmq3-dev libcairo2-dev libpango1.0-dev libblas-dev liblapack-dev gcc g++ libncurses5-dev
+RUN apt-get update && apt-get install -y python-dev python-setuptools libmagic-dev libtinfo-dev libzmq3-dev libcairo2-dev libpango1.0-dev libblas-dev liblapack-dev gcc g++ libncurses5-dev && \
+apt-get install -y pandoc texlive texlive-latex-extra texlive-fonts-recommended
 
 # Install Jupyter notebook
 RUN easy_install -U pip && pip install -U jupyter
