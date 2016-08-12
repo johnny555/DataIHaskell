@@ -39,7 +39,8 @@ RUN stack build \
 && stack install csv \
 && stack install vector \
 && stack install flow \
-&& stack install ihaskell-charts
+&& stack install ihaskell-charts \
+&& stack install random
 
 # Run the notebook
 RUN mkdir /notebooks
