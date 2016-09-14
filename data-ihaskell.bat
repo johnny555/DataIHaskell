@@ -1,14 +1,16 @@
 @ECHO OFF
 
-SET man1=%1
-
 IF NOT "%1"=="" (
     IF "%1"=="rebuild" (
         docker build -t datahaskell-ihaskell IHaskell
         goto END
     )
     IF "%1"=="run" (
-        docker run -it --volume %cd%:/notebooks --publish 8888:8888 datahaskell-ihaskell
+        SET pwd=%cd%
+        SET pwd=%pwd:\=/%
+        echo Current directory is %pwd%
+        echo Remember to enable this drive in "Shared Drives" within Docker settings
+        docker run -it --volume "%pwd%":/notebooks --publish 8888:8888 datahaskell-ihaskell
         goto END
     )
 )
