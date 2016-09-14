@@ -1,1 +1,1 @@
-sudo docker build -t my-ihaskell IHaskell/
+sudo docker build -t datahaskell-ihaskell IHaskell/
