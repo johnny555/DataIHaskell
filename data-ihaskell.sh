@@ -13,7 +13,7 @@ then
 else
     if [ "$1" == "run" ]
     then
-        docker run -it --volume `pwd`/IHaskell/notebooks:/notebooks --publish 8888:8888 datahaskell-ihaskell
+        docker run -it --volume `pwd`:/notebooks --publish 8888:8888 datahaskell-ihaskell
     else
         if [ "$1" == "rebuild" ]
         then
